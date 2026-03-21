@@ -6,6 +6,8 @@ dist/
 wheels/
 *.egg-info
 artifacts
-
+.dvcignore
+dvc.lock
+.dvc
 # Virtual environments
 .venv

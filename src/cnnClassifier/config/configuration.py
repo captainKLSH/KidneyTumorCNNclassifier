@@ -1,8 +1,10 @@
 from cnnClassifier.constants import *
 import os
 from pathlib import Path
-from src.cnnClassifier.utils.common import read_yaml, create_directories
-from src.cnnClassifier.entity.config_entity import (DataIngestionConfig,
+import dagshub
+import mlflow
+from cnnClassifier.utils.common import read_yaml, create_directories
+from cnnClassifier.entity.config_entity import (DataIngestionConfig,
                                                 PrepareBaseModelConfig,
                                                 PrepareCallbacksConfig,
                                                 TrainingConfig,
@@ -104,10 +106,11 @@ class ConfigurationManager:
 
 
     def get_evaluation_config(self) -> EvaluationConfig:
+        dagshub.init(repo_owner='captainkiran0158', repo_name='KidneyTumorCNNclassifier', mlflow=True)
         eval_config = EvaluationConfig(
             path_of_model="artifacts/training/model.h5",
             training_data="artifacts/data_ingestion/kidney-ct-scan-image",
-            mlflow_uri="https://dagshub.com/captainkiran0158/KidneyTumorCNNclassifier",
+            mlflow_uri=f"{mlflow.get_tracking_uri()}",
             all_params=self.params,
             params_image_size=self.params.IMAGE_SIZE,
             params_batch_size=self.params.BATCH_SIZE

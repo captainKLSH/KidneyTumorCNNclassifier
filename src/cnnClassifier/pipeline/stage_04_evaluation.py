@@ -1,6 +1,6 @@
-from src.cnnClassifier.config.configuration import ConfigurationManager
-from src.cnnClassifier.components.evaluation import Evaluation
-from src.cnnClassifier import logger
+from cnnClassifier.config.configuration import ConfigurationManager
+from cnnClassifier.components.evaluation import Evaluation
+from cnnClassifier import logger
 
 
 
@@ -18,7 +18,7 @@ class EvaluationPipeline:
         evaluation = Evaluation(eval_config)
         evaluation.evaluation()
         evaluation.save_score()
-        evaluation.log_into_mlflow()
+        # evaluation.log_into_mlflow()
 
 
 
