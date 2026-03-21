@@ -190,3 +190,670 @@ x==========x]
 [2026-03-21 14:14:52,774: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2026-03-21 14:26:14,468: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.24:8080]
+[2026-03-21 14:26:14,469: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-21 14:26:23,371: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:26:23] "GET / HTTP/1.1" 200 -]
+[2026-03-21 14:26:23,869: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:26:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-03-21 14:26:41,063: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:26:41,070: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:26:41] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:26:42,518: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:26:42,519: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:26:42] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:26:43,095: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:26:43,096: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:26:43] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:26:43,294: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:26:43,294: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:26:43] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:26:43,452: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:26:43,453: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:26:43] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:28:28,175: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:28:28,182: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:28:28] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:28:28,777: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:28:28,779: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:28:28] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:28:28,961: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:28:28,962: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:28:28] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:28:29,127: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:28:29,128: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:28:29] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:28:29,261: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:28:29,262: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:28:29] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:28:29,412: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model/model.h5
+[2026-03-21 14:28:29,412: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:28:29] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:31:20,749: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:31:20] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:32:06,552: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:32:06] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:32:19,101: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:32:19] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:32:30,320: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:32:30] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:33:53,719: INFO: stage_02_prepare_base_model: *******************]
+[2026-03-21 14:33:53,719: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-21 14:33:53,720: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:33:53,721: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:33:53,721: INFO: common: created directory at: artifacts]
+[2026-03-21 14:33:53,721: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-21 14:33:54,483: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-21 14:33:54,745: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.SGD` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:33:54,747: WARNING: __init__: There is a known slowdown when using v2.11+ Keras optimizers on M1/M2 Macs. Falling back to the legacy Keras optimizer, i.e., `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:33:54,992: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-21 14:33:58,889: INFO: stage_03_training: *******************]
+[2026-03-21 14:33:58,889: INFO: stage_03_training: >>>>>> stage Training started <<<<<<]
+[2026-03-21 14:33:58,890: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:33:58,891: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:33:58,891: INFO: common: created directory at: artifacts]
+[2026-03-21 14:33:58,891: INFO: common: created directory at: artifacts/prepare_callbacks/checkpoint_dir]
+[2026-03-21 14:33:58,891: INFO: common: created directory at: artifacts/prepare_callbacks/tensorboard_log_dir]
+[2026-03-21 14:33:58,891: INFO: common: created directory at: artifacts/training]
+[2026-03-21 14:35:03,599: INFO: stage_03_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-21 14:35:09,380: INFO: stage_04_evaluation: *******************]
+[2026-03-21 14:35:09,381: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-21 14:35:09,382: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:35:09,382: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:35:09,383: INFO: common: created directory at: artifacts]
+[2026-03-21 14:35:09,681: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:35:09,686: INFO: helpers: Accessing as captainkiran0158]
+[2026-03-21 14:35:09,970: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/captainkiran0158/KidneyTumorCNNclassifier "HTTP/1.1 200 OK"]
+[2026-03-21 14:35:10,206: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:35:10,209: INFO: helpers: Initialized MLflow to track repo "captainkiran0158/KidneyTumorCNNclassifier"]
+[2026-03-21 14:35:10,210: INFO: helpers: Repository captainkiran0158/KidneyTumorCNNclassifier initialized!]
+[2026-03-21 14:35:12,304: INFO: common: json file saved at: scores.json]
+[2026-03-21 14:35:12,304: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-03-21 14:36:09,528: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x14d9c7640> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-03-21 14:36:09,530: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:36:09] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:36:16,700: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x14d9c7be0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-03-21 14:36:16,703: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:36:16] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:36:26,268: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:36:26] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:36:32,129: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:36:32] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:37:57,735: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:37:57] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:38:10,449: INFO: _internal: 10.0.0.24 - - [21/Mar/2026 14:38:10] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:38:31,611: INFO: stage_03_training: *******************]
+[2026-03-21 14:38:31,611: INFO: stage_03_training: >>>>>> stage Training started <<<<<<]
+[2026-03-21 14:38:31,612: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:38:31,613: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:38:31,613: INFO: common: created directory at: artifacts]
+[2026-03-21 14:38:31,613: INFO: common: created directory at: artifacts/prepare_callbacks/checkpoint_dir]
+[2026-03-21 14:38:31,613: INFO: common: created directory at: artifacts/prepare_callbacks/tensorboard_log_dir]
+[2026-03-21 14:38:31,614: INFO: common: created directory at: artifacts/training]
+[2026-03-21 14:38:36,763: INFO: stage_03_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-21 14:38:41,740: INFO: stage_04_evaluation: *******************]
+[2026-03-21 14:38:41,740: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-21 14:38:41,742: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:38:41,743: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:38:41,743: INFO: common: created directory at: artifacts]
+[2026-03-21 14:38:42,021: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:38:42,027: INFO: helpers: Accessing as captainkiran0158]
+[2026-03-21 14:38:42,344: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/captainkiran0158/KidneyTumorCNNclassifier "HTTP/1.1 200 OK"]
+[2026-03-21 14:38:42,653: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:38:42,654: INFO: helpers: Initialized MLflow to track repo "captainkiran0158/KidneyTumorCNNclassifier"]
+[2026-03-21 14:38:42,655: INFO: helpers: Repository captainkiran0158/KidneyTumorCNNclassifier initialized!]
+[2026-03-21 14:38:44,713: INFO: common: json file saved at: scores.json]
+[2026-03-21 14:38:44,713: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-03-21 14:40:24,167: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.24:8080]
+[2026-03-21 14:40:24,167: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-21 14:40:27,830: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:27] "GET / HTTP/1.1" 200 -]
+[2026-03-21 14:40:28,310: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-03-21 14:40:38,426: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("artifact","training", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifact/training/model.h5
+[2026-03-21 14:40:38,431: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:38] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:40:39,157: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("artifact","training", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifact/training/model.h5
+[2026-03-21 14:40:39,158: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:39] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:40:55,507: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("artifacts","training", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifact/training/model.h5
+[2026-03-21 14:40:55,509: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:55] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:40:56,340: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("artifacts","training", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifact/training/model.h5
+[2026-03-21 14:40:56,341: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:56] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:40:56,487: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("artifacts","training", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifact/training/model.h5
+[2026-03-21 14:40:56,487: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:56] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:40:56,654: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/flask_cors/decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/app.py", line 40, in predictRoute
+    result = clApp.classifier.predict()
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/src/cnnClassifier/pipeline/predict.py", line 16, in predict
+    model = load_model(os.path.join("artifacts","training", "model.h5"))
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/kiranprasadjp/Documents/Pros/KidneyTumorCNNclassifier/.venv/lib/python3.10/site-packages/keras/saving/legacy/save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at artifact/training/model.h5
+[2026-03-21 14:40:56,655: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:40:56] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-21 14:41:14,023: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.24:8080]
+[2026-03-21 14:41:14,024: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-21 14:41:16,377: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:41:16] "GET / HTTP/1.1" 200 -]
+[2026-03-21 14:41:22,594: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:41:22] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:45:36,596: INFO: stage_02_prepare_base_model: *******************]
+[2026-03-21 14:45:36,596: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-21 14:45:36,597: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:45:36,598: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:45:36,598: INFO: common: created directory at: artifacts]
+[2026-03-21 14:45:36,598: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-21 14:45:37,054: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-21 14:45:37,202: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.SGD` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:45:37,205: WARNING: __init__: There is a known slowdown when using v2.11+ Keras optimizers on M1/M2 Macs. Falling back to the legacy Keras optimizer, i.e., `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:45:37,448: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-21 14:45:41,505: INFO: stage_03_training: *******************]
+[2026-03-21 14:45:41,505: INFO: stage_03_training: >>>>>> stage Training started <<<<<<]
+[2026-03-21 14:45:41,506: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:45:41,507: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:45:41,507: INFO: common: created directory at: artifacts]
+[2026-03-21 14:45:41,507: INFO: common: created directory at: artifacts/prepare_callbacks/checkpoint_dir]
+[2026-03-21 14:45:41,507: INFO: common: created directory at: artifacts/prepare_callbacks/tensorboard_log_dir]
+[2026-03-21 14:45:41,507: INFO: common: created directory at: artifacts/training]
+[2026-03-21 14:45:46,586: INFO: stage_03_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-21 14:45:51,222: INFO: stage_04_evaluation: *******************]
+[2026-03-21 14:45:51,222: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-21 14:45:51,223: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:45:51,224: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:45:51,224: INFO: common: created directory at: artifacts]
+[2026-03-21 14:45:51,589: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:45:51,595: INFO: helpers: Accessing as captainkiran0158]
+[2026-03-21 14:45:51,992: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/captainkiran0158/KidneyTumorCNNclassifier "HTTP/1.1 200 OK"]
+[2026-03-21 14:45:52,250: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:45:52,251: INFO: helpers: Initialized MLflow to track repo "captainkiran0158/KidneyTumorCNNclassifier"]
+[2026-03-21 14:45:52,251: INFO: helpers: Repository captainkiran0158/KidneyTumorCNNclassifier initialized!]
+[2026-03-21 14:45:53,996: INFO: common: json file saved at: scores.json]
+[2026-03-21 14:45:53,996: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-03-21 14:46:20,156: INFO: stage_03_training: *******************]
+[2026-03-21 14:46:20,156: INFO: stage_03_training: >>>>>> stage Training started <<<<<<]
+[2026-03-21 14:46:20,157: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:46:20,158: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:46:20,158: INFO: common: created directory at: artifacts]
+[2026-03-21 14:46:20,158: INFO: common: created directory at: artifacts/prepare_callbacks/checkpoint_dir]
+[2026-03-21 14:46:20,158: INFO: common: created directory at: artifacts/prepare_callbacks/tensorboard_log_dir]
+[2026-03-21 14:46:20,159: INFO: common: created directory at: artifacts/training]
+[2026-03-21 14:46:34,658: INFO: stage_03_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-21 14:46:39,487: INFO: stage_04_evaluation: *******************]
+[2026-03-21 14:46:39,487: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-21 14:46:39,488: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:46:39,489: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:46:39,489: INFO: common: created directory at: artifacts]
+[2026-03-21 14:46:39,809: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:46:39,819: INFO: helpers: Accessing as captainkiran0158]
+[2026-03-21 14:46:40,171: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/captainkiran0158/KidneyTumorCNNclassifier "HTTP/1.1 200 OK"]
+[2026-03-21 14:46:40,335: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:46:40,338: INFO: helpers: Initialized MLflow to track repo "captainkiran0158/KidneyTumorCNNclassifier"]
+[2026-03-21 14:46:40,339: INFO: helpers: Repository captainkiran0158/KidneyTumorCNNclassifier initialized!]
+[2026-03-21 14:46:42,178: INFO: common: json file saved at: scores.json]
+[2026-03-21 14:46:42,179: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-03-21 14:46:54,156: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:46:54] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:47:01,632: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:47:01] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:47:27,058: INFO: stage_02_prepare_base_model: *******************]
+[2026-03-21 14:47:27,058: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-21 14:47:27,060: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:47:27,060: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:47:27,060: INFO: common: created directory at: artifacts]
+[2026-03-21 14:47:27,060: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-21 14:47:27,578: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-21 14:47:27,684: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.SGD` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:47:27,687: WARNING: __init__: There is a known slowdown when using v2.11+ Keras optimizers on M1/M2 Macs. Falling back to the legacy Keras optimizer, i.e., `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:47:27,922: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-21 14:47:32,279: INFO: stage_03_training: *******************]
+[2026-03-21 14:47:32,279: INFO: stage_03_training: >>>>>> stage Training started <<<<<<]
+[2026-03-21 14:47:32,281: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:47:32,281: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:47:32,281: INFO: common: created directory at: artifacts]
+[2026-03-21 14:47:32,281: INFO: common: created directory at: artifacts/prepare_callbacks/checkpoint_dir]
+[2026-03-21 14:47:32,281: INFO: common: created directory at: artifacts/prepare_callbacks/tensorboard_log_dir]
+[2026-03-21 14:47:32,282: INFO: common: created directory at: artifacts/training]
+[2026-03-21 14:48:00,317: INFO: stage_03_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-21 14:48:05,531: INFO: stage_04_evaluation: *******************]
+[2026-03-21 14:48:05,532: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-21 14:48:05,533: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:48:05,533: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:48:05,534: INFO: common: created directory at: artifacts]
+[2026-03-21 14:48:05,873: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:48:05,877: INFO: helpers: Accessing as captainkiran0158]
+[2026-03-21 14:48:06,176: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/captainkiran0158/KidneyTumorCNNclassifier "HTTP/1.1 200 OK"]
+[2026-03-21 14:48:06,385: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:48:06,387: INFO: helpers: Initialized MLflow to track repo "captainkiran0158/KidneyTumorCNNclassifier"]
+[2026-03-21 14:48:06,387: INFO: helpers: Repository captainkiran0158/KidneyTumorCNNclassifier initialized!]
+[2026-03-21 14:48:08,419: INFO: common: json file saved at: scores.json]
+[2026-03-21 14:48:08,419: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-03-21 14:51:32,257: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.24:8080]
+[2026-03-21 14:51:32,257: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-21 14:51:35,070: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:51:35] "GET / HTTP/1.1" 200 -]
+[2026-03-21 14:51:35,475: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:51:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-03-21 14:52:06,657: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:52:06] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:52:15,520: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:52:15] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:52:46,603: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:52:46] "GET / HTTP/1.1" 200 -]
+[2026-03-21 14:52:52,130: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:52:52] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:52:57,582: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:52:57] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:53:22,666: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.0.0.24:8080]
+[2026-03-21 14:53:22,666: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-21 14:53:24,470: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:53:24] "GET / HTTP/1.1" 200 -]
+[2026-03-21 14:53:32,887: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:53:32] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:53:40,191: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:53:40] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:53:45,584: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:53:45] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:54:26,294: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:54:26] "POST /predict HTTP/1.1" 200 -]
+[2026-03-21 14:54:40,474: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x14ea00670> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-03-21 14:54:40,476: INFO: _internal: 127.0.0.1 - - [21/Mar/2026 14:54:40] "POST /predict HTTP/1.1" 200 -]

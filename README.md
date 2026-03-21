@@ -6,6 +6,10 @@ The **Kidney Tumor CNN Classifier** is a deep learning-based computer vision app
 
 The application is built using a modular MLOps pipeline that encompasses data ingestion, model preparation, training, evaluation, and deployment. This architecture ensures reproducibility, scalability, and production-readiness.
 
+|Normal|Tumor|
+|-|-|
+|<img src="./nor.png" width="600px">|<img src="./def.png" width="600px">|
+
 ### Key Features
 
 - **Transfer Learning**: Utilizes pre-trained VGG16 model for improved accuracy with limited data
@@ -34,7 +38,7 @@ This project implements an end-to-end machine learning pipeline for kidney tumor
 - **Output Classes**: 2 (Normal, Tumor)
 - **Training Epochs**: 12
 - **Batch Size**: 16
-- **Learning Rate**: 0.01
+- **Learning Rate**: 0.001
 
 ### Target Metrics
 
@@ -152,7 +156,7 @@ INCLUDE_TOP: False # Exclude classification head from base model
 EPOCHS: 12 # Number of training epochs
 CLASSES: 2 # Binary classification
 WEIGHTS: imagenet # Pre-trained weights
-LEARNING_RATE: 0.01 # Optimizer learning rate
+LEARNING_RATE: 0.001 # Optimizer learning rate
 ```
 
 ---
@@ -181,11 +185,21 @@ python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
+```bash
+uv venv .venv --python 3.10
+source .venv/bin/activate 
+```
+
 #### 3. Install Dependencies
 
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
+or
+uv add -r requirements.txt
+or
+uv pip install -r requirements.txt
+
 ```
 
 Or using pyproject.toml:
@@ -257,7 +271,9 @@ If DVC is configured:
 ```bash
 dvc repro
 ```
-
+|Ingestion & Base model|Training & Evaluation|
+|-|-|
+|<img src="./tra.png" width="500px">|<img src="./eva.png" width="500px">|
 ---
 
 ## 7. Model Training and Evaluation
@@ -357,29 +373,6 @@ flask run
    - Show confidence score
    - Display processed image
 
-#### Option C: Direct Model Loading
-
-```python
-import tensorflow as tf
-import numpy as np
-from PIL import Image
-
-# Load trained model
-model = tf.keras.models.load_model('artifacts/training/model.h5')
-
-# Load and preprocess image
-image = Image.open('path/to/ct_scan.jpg')
-image = image.resize((224, 224))
-image_array = np.array(image) / 255.0
-image_array = np.expand_dims(image_array, axis=0)
-
-# Make prediction
-prediction = model.predict(image_array)
-class_name = "Tumor" if prediction[0][0] > 0.5 else "Normal"
-confidence = prediction[0][0] if prediction[0][0] > 0.5 else 1 - prediction[0][0]
-
-print(f"Prediction: {class_name} ({confidence:.2%} confidence)")
-```
 
 ### Model Artifacts
 
@@ -490,6 +483,82 @@ pip install tensorflow-metal>=1.2.0
 - Enable/verify `AUGMENTATION: True`
 
 ---
+
+# AWS-CICD-Deployment-with-Github-Actions
+
+## 1. Login to AWS console.
+
+## 2. Create IAM user for deployment
+
+	<!-- with specific access -->
+
+	1. EC2 access : It is virtual machine
+
+	2. ECR: Elastic Container registry to save your docker image in aws
+
+
+	<!-- Description: About the deployment -->
+
+	1. Build docker image of the source code
+
+	2. Push your docker image to ECR
+
+	3. Launch Your EC2 
+
+	4. Pull Your image from ECR in EC2
+
+	5. Lauch your docker image in EC2
+
+	<!-- Policy: -->
+
+	1. AmazonEC2ContainerRegistryFullAccess
+
+	2. AmazonEC2FullAccess
+
+	
+## 3. Create ECR repo to store/save docker image
+    - Save the URI: 
+
+	
+## 4. Create EC2 machine (Ubuntu) 
+
+## 5. Open EC2 and Install docker in EC2 Machine:
+	
+	
+	#optinal
+
+	sudo apt-get update -y
+
+	sudo apt-get upgrade
+	
+	#required
+
+	curl -fsSL https://get.docker.com -o get-docker.sh
+
+	sudo sh get-docker.sh
+
+	sudo usermod -aG docker ubuntu
+
+	newgrp docker
+	
+# 6. Configure EC2 as self-hosted runner:
+    setting>actions>runner>new self hosted runner> choose os> then run command one by one
+
+
+# 7. Setup github secrets:
+
+    AWS_ACCESS_KEY_ID=
+
+    AWS_SECRET_ACCESS_KEY=
+
+    AWS_REGION = us-east-1
+
+    AWS_ECR_LOGIN_URI = demo>> 
+
+    ECR_REPOSITORY_NAME = simple-app
+
+
+
 
 ## Project Team & References
 
