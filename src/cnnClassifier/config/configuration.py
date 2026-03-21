@@ -107,7 +107,7 @@ class ConfigurationManager:
         eval_config = EvaluationConfig(
             path_of_model="artifacts/training/model.h5",
             training_data="artifacts/data_ingestion/kidney-ct-scan-image",
-            mlflow_uri="https://dagshub.com/entbappy/MLflow-DVC-Chicken-Disease-Classification.mlflow",
+            mlflow_uri="https://dagshub.com/captainkiran0158/KidneyTumorCNNclassifier",
             all_params=self.params,
             params_image_size=self.params.IMAGE_SIZE,
             params_batch_size=self.params.BATCH_SIZE
