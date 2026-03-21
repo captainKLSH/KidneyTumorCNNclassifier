@@ -142,3 +142,51 @@ x==========x]
 [2026-03-21 14:05:03,621: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2026-03-21 14:13:57,903: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-03-21 14:13:57,904: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:13:57,905: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:13:57,905: INFO: common: created directory at: artifacts]
+[2026-03-21 14:13:57,905: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-21 14:13:57,905: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2026-03-21 14:14:01,449: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2026-03-21 14:14:01,712: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-03-21 14:14:06,035: INFO: stage_02_prepare_base_model: *******************]
+[2026-03-21 14:14:06,035: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-21 14:14:06,036: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:14:06,036: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:14:06,037: INFO: common: created directory at: artifacts]
+[2026-03-21 14:14:06,037: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-21 14:14:06,512: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-21 14:14:06,612: WARNING: optimizer: At this time, the v2.11+ optimizer `tf.keras.optimizers.SGD` runs slowly on M1/M2 Macs, please use the legacy Keras optimizer instead, located at `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:14:06,614: WARNING: __init__: There is a known slowdown when using v2.11+ Keras optimizers on M1/M2 Macs. Falling back to the legacy Keras optimizer, i.e., `tf.keras.optimizers.legacy.SGD`.]
+[2026-03-21 14:14:06,783: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-21 14:14:10,380: INFO: stage_03_training: *******************]
+[2026-03-21 14:14:10,380: INFO: stage_03_training: >>>>>> stage Training started <<<<<<]
+[2026-03-21 14:14:10,381: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:14:10,381: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:14:10,382: INFO: common: created directory at: artifacts]
+[2026-03-21 14:14:10,382: INFO: common: created directory at: artifacts/prepare_callbacks/checkpoint_dir]
+[2026-03-21 14:14:10,382: INFO: common: created directory at: artifacts/prepare_callbacks/tensorboard_log_dir]
+[2026-03-21 14:14:10,382: INFO: common: created directory at: artifacts/training]
+[2026-03-21 14:14:44,298: INFO: stage_03_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-21 14:14:50,026: INFO: stage_04_evaluation: *******************]
+[2026-03-21 14:14:50,026: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-21 14:14:50,027: INFO: common: yaml file: config/config.yaml loaded successfully]
+[2026-03-21 14:14:50,028: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-21 14:14:50,028: INFO: common: created directory at: artifacts]
+[2026-03-21 14:14:50,321: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:14:50,328: INFO: helpers: Accessing as captainkiran0158]
+[2026-03-21 14:14:50,560: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/captainkiran0158/KidneyTumorCNNclassifier "HTTP/1.1 200 OK"]
+[2026-03-21 14:14:50,836: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-21 14:14:50,838: INFO: helpers: Initialized MLflow to track repo "captainkiran0158/KidneyTumorCNNclassifier"]
+[2026-03-21 14:14:50,839: INFO: helpers: Repository captainkiran0158/KidneyTumorCNNclassifier initialized!]
+[2026-03-21 14:14:52,774: INFO: common: json file saved at: scores.json]
+[2026-03-21 14:14:52,774: INFO: stage_04_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
